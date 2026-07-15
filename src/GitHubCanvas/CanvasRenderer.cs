@@ -10,7 +10,6 @@ internal readonly record struct CanvasPixel(int Row, int Column, DateOnly Date);
 internal static class CanvasRenderer
 {
     public const int Rows = PixelFont.GlyphHeight;
-    public const int MaxColumns = 52;
 
     public static int CalculateWidth(string text) =>
         text.Length == 0 ? 0 : text.Length * (PixelFont.GlyphWidth + PixelFont.GlyphSpacing) - PixelFont.GlyphSpacing;

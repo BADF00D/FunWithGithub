@@ -70,14 +70,6 @@ internal sealed record CliOptions(
                 $"Unsupported character(s) in --text: {chars}. Only A-Z, 0-9 and space are supported.");
         }
 
-        var width = CanvasRenderer.CalculateWidth(text);
-        if (width > CanvasRenderer.MaxColumns)
-        {
-            throw new CliUsageException(
-                $"--text is too wide: '{text}' needs {width} columns, but a year only offers " +
-                $"{CanvasRenderer.MaxColumns} weeks. Use shorter text.");
-        }
-
         if (string.IsNullOrWhiteSpace(startDateRaw))
         {
             throw new CliUsageException($"--start-date is required.\n\n{Usage}");

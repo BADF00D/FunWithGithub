@@ -1,8 +1,6 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/GitHubCanvas/GitHubCanvas.csproj" />
-  </Folder>
-  <Folder Name="/tests/">
-    <Project Path="tests/GitHubCanvas.Tests/GitHubCanvas.Tests.csproj" />
+    <Project Path="src/GitHubCanvas.Tests/GitHubCanvas.Tests.csproj" />
   </Folder>
 </Solution>

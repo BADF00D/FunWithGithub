@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\GitHubCanvas\GitHubCanvas.csproj" />
+    <ProjectReference Include="..\GitHubCanvas\GitHubCanvas.csproj" />
   </ItemGroup>
 
 </Project>

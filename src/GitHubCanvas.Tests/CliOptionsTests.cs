@@ -71,13 +71,13 @@ public class CliOptionsTests
     }
 
     [Test]
-    public void Parse_TextWiderThanAYear_Throws()
+    public void Parse_TextWiderThanAYear_IsAccepted()
     {
-        // 9 letters * 6 - 1 = 53 columns, one more than the 52-column max.
-        var ex = Assert.Throws<CliUsageException>(() =>
-            CliOptions.Parse(["--text", "ABCDEFGHI", "--start-date", "2026-01-04"]));
+        // The canvas is not capped at 52 columns: wider text just produces a wider grid,
+        // spanning as many weeks as needed.
+        var options = CliOptions.Parse(["--text", "ABCDEFGHI ABCDEFGHI", "--start-date", "2026-01-04"]);
 
-        Assert.That(ex!.Message, Does.Contain("too wide"));
+        Assert.That(options.Text, Is.EqualTo("ABCDEFGHI ABCDEFGHI"));
     }
 
     [Test]
